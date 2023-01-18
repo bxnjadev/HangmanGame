@@ -1,8 +1,11 @@
+from helper import encoder
 from helper.reader_file import ReaderFile
 import socket
 
-socket_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+from server import client_message_result
 
+socket_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+LIMIT_BYTES = 1024
 
 def __init__():
 
@@ -20,8 +23,10 @@ def __init__():
 def listen():
 
     client, address = socket_server.accept()
+    message_in_bytes = client.recv(LIMIT_BYTES)
+    message = encoder.decode(message_in_bytes)
 
-
+    response = client_message_result.get_response(message)
 
 
 __init__()
