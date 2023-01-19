@@ -48,8 +48,12 @@ def listen():
         print("User registered: ", content_message_response.get_message())
         return
 
-    client_wrapper = client_handler.get_client()
-    action_response = client_message_result.get_response(message)
+    name = content_message_response.get_name()
+
+    client_wrapper = client_handler.get_client(name)
+    action_response = client_message_result.get_response(message.get_type())
+
+    action_response.response(client_wrapper, content_message_response)
 
 
 __init__()
