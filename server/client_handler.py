@@ -15,6 +15,10 @@ def get_client(name):
     return clients[name]
 
 
+def get_clients():
+    return clients
+
+
 class ClientWrapper:
 
     def __init__(self, client):
