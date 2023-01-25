@@ -55,7 +55,7 @@ class HangmanGame:
     def get_message_words(self):
 
         messages = []
-        actual_message = ""
+        actual_message = " " * 10
 
         for i in range(len(self.word)):
             letter = self.word[i]
@@ -63,8 +63,10 @@ class HangmanGame:
             if letter == " ":
                 if len(messages) > 20:
                     messages.append(actual_message)
-                    actual_message = ""
-                continue
+                    actual_message = " " * 10
+                    continue
+
+                actual_message = actual_message + " " * 3
 
             if letter in self.letters_available:
                 actual_message = actual_message + " _ "
