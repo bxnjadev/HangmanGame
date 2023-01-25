@@ -21,9 +21,8 @@ class HangmanGame:
         pass
 
     def next_turn(self):
-        chat_server.broadcast_server(
-            messages_handler.get_message("game_next_turn")
-        )
+
+        messages_handler.get_message_and_replace("sta")
 
         pass
 
