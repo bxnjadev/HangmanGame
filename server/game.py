@@ -1,5 +1,9 @@
+import random
+
+from server import files_handler
+
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-           'n', 'o', 'p', 'q',' r', 's', 't', 'u', 'w', 'x', 'y', 'z']
+           'n', 'o', 'p', 'q', ' r', 's', 't', 'u', 'w', 'x', 'y', 'z']
 
 
 class HangmanGame:
@@ -20,6 +24,13 @@ class HangmanGame:
         pass
 
     def select_word(self):
+
+        reader = files_handler.get_reader_words()
+        random_value = random.randint(0, len(reader.get_size()) - 1)
+
+
+
+
         pass
 
     def play(self, client_wrapper, letter):
