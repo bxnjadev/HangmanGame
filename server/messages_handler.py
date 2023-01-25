@@ -3,7 +3,7 @@ from helper.reader_file import ReaderFile
 messages = ReaderFile("messages")
 
 
-def get_message_and(path, *variables):
+def get_message(path, *variables):
 
     message = messages.get_string(path)
 
