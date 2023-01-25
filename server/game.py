@@ -28,10 +28,7 @@ class HangmanGame:
         reader = files_handler.get_reader_words()
         random_value = random.randint(0, len(reader.get_size()) - 1)
 
-
-
-
-        pass
+        self.word = reader.get_index_as_position(random_value)
 
     def play(self, client_wrapper, letter):
         pass
