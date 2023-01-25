@@ -1,6 +1,6 @@
 import random
 
-from server import files_handler
+from server import files_handler, chat_server, messages_handler
 
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
            'n', 'o', 'p', 'q', ' r', 's', 't', 'u', 'w', 'x', 'y', 'z']
@@ -21,6 +21,10 @@ class HangmanGame:
         pass
 
     def next_turn(self):
+        chat_server.broadcast_server(
+            messages_handler.get_message("game_next_turn")
+        )
+
         pass
 
     def select_word(self):

@@ -37,6 +37,10 @@ class ReaderFile:
         index_path = self.keys.index(key)
         return self.values[index_path]
 
+    def get_list(self, key):
+        index_path = self.keys.index(key)
+        return self.values[index_path]
+
     def get_int(self, key):
         return int(self.get_string(key))
 
